@@ -1,0 +1,126 @@
+##############################################
+###            sensor.yaml
+#############################################
+
+############# Sensory AFE ############
+#### Stacja Pogody
+######################################
+  - platform: mqtt
+    name: "Stacja Jasność"
+    state_topic: "/stacja/BH/"
+    unit_of_measurement: "lux"
+    value_template: '{{ value_json["illuminance"].value  }}'
+  - platform: mqtt
+    name: Stacja Pył PM2.5
+    state_topic: "/stacja/HPMA/"
+    value_template: '{{ value_json["PM25"].value  }}'
+    unit_of_measurement: "μg/m3"
+  - platform: mqtt
+    name: Stacja Pył PM10
+    state_topic: "/stacja/HPMA/"
+    value_template: '{{ value_json["PM10"].value  }}'
+    unit_of_measurement: "μg/m3"
+  - platform: mqtt
+    name: Stacja Temperatura
+    state_topic: "/stacja/BME/"
+    value_template: '{{ value_json["temperature"].value  }}'
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: Stacja Wilgotność
+    state_topic: "/stacja/BME/"
+    value_template: '{{ value_json["humidity"].value  }}'
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: Stacja Ciśnienie
+    state_topic: "/stacja/BME/"
+    value_template: '{{ value_json["pressure"].value  }}'
+    unit_of_measurement: "hpa"
+  - platform: mqtt
+    name: Stacja Ciśnienie względne
+    state_topic: "/stacja/BME/"
+    value_template: '{{ value_json["relativePressure"].value  }}'
+    unit_of_measurement: "hpa"
+  - platform: mqtt
+    name: Stacja Punkty rosy
+    state_topic: "/stacja/BME/"
+    value_template: '{{ value_json["dewPoint"].value  }}'
+    unit_of_measurement: "°"
+  - platform: mqtt
+    name: Stacja Temperatura odczuwalna
+    state_topic: "/stacja/BME/"
+    value_template: '{{ value_json["heatIndex"].value  }}'
+    unit_of_measurement: "°"
+    
+    
+#### wyniki z czytnika mqqt
+#{"temperature":{"value":26.77,"unit":"C","correction":0},
+#"pressure":{"value":992.2989,"unit":"hPa","correction":0},
+#"relativePressure":{"value":1013.771,"unit":"hPa"},
+#"dewPoint":{"value":11.64179,"unit":"C"},
+#"humidity":{"value":38.99219,"unit":"%","correction":0,"rating":2},
+#"heatIndex":{"value":26.52069,"unit":"C"}}
+###
+
+#######
+### czujnik dht12 nazwany komp
+  - platform: mqtt
+    name: komp-temp
+    state_topic: "/komp/temperature"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: komp-wilg
+    state_topic: "/komp/humidity"
+    unit_of_measurement: "%"
+  - platform: mqtt
+    name: komp-index
+    state_topic: "/komp/heatIndex"
+    unit_of_measurement: "°C"
+  - platform: mqtt
+    name: komp-punkty
+    state_topic: "/komp/dewPoint"
+    unit_of_measurement: "°"
+    
+
+
+########################################
+### Xiaomi bluetoot sensor temp wilg 1
+########################################
+  - platform: mitemp_bt
+    mac: '4C:65:A8:DD:85:16'
+    name: sypialnia
+    force_update: true
+    median: 1
+    monitored_conditions:
+      - temperature
+      - humidity
+      - battery
+
+
+########################################
+### Sensor Malina:
+########################################
+## Temperatura procesora Maliny:
+  - platform: command_line
+    name: Rpi CPU Temperature
+    command: "cat /sys/class/thermal/thermal_zone0/temp"
+    # If errors occur, remove degree symbol below
+    unit_of_measurement: "°C"
+    value_template: '{{ value | multiply(0.001) | round(1) }}'
+## Miejsce na Dysku:
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /home
+      - type: memory_free
+## Użycie procesora:
+  - platform: systemmonitor
+    resources:
+      - type: processor_use
+## Użycie pamięci:
+  - platform: systemmonitor
+    resources:
+      - type: memory_use
+## Ostatni boot:
+  - platform: systemmonitor
+    resources:
+      - type: last_boot
