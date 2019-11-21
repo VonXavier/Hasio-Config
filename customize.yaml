@@ -1,0 +1,4 @@
+switch.multi_relay_0_1:
+  friendly_name: Master 1
+switch.multi_relay_0_2:
+  friendly_name: Master 2
