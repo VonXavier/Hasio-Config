@@ -1,0 +1,89 @@
+- alias: Lampka nocna lili on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.presence_2
+    to: 'on'
+  condition:
+#  - after: sunset
+#    after_offset: -00:45:00
+#    before: sunrise
+#    condition: sun
+  - condition: state
+    entity_id: switch.multi_relay_0_1
+    state: 'off'
+  - condition: or
+    conditions:
+    - condition: state
+      entity_id: switch.multi_relay_0_2
+      state: 'off'
+  action:
+    service: light.turn_on
+    entity_id: light.night_lamp
+  id: fc69f9fb68084b1aa787b7745a4fad26
+- alias: Lampka nocna lili off po 1 min
+  trigger:
+    platform: state
+    entity_id: binary_sensor.presence_2
+    to: 'off'
+    for:
+      minutes: 1
+  action:
+    service: light.turn_off
+    entity_id: light.night_lamp
+  id: a50d9b982b12497e8acb12ce54eec0cb
+############################################################
+
+
+- alias: lili wstala
+  trigger:
+  - platform: state
+    entity_id: binary_sensor.presence_2
+    from: 'off'
+    to: 'on'
+  condition:
+    condition: time
+    after: 06:10:00
+    before: '10:30:00'
+  action:
+  - service: notify.pushbullet
+    data_template:
+      title: Lili
+      target: device/LENOVO-Lenovo
+      message: Home Assistant - Lili wstała
+  id: aa59ad085ecd4d3cb11fdf6497ab8f72
+#############################################################
+
+#- id: '1573586825008'
+#  alias: lampka nocna auto
+#  description: ''
+#  trigger:
+#  - device_id: c693aa1e236f4d44b7791de5c66bf956
+#    domain: binary_sensor
+#    entity_id: binary_sensor.presence_2
+#    for:
+#      hours: 0
+#      minutes: 1
+#      seconds: 0
+#    platform: device
+#   type: motion
+#  condition:
+#  - after: sunset
+#    after_offset: -00:45:00
+#    before: sunrise
+#    condition: sun
+#  - condition: state
+#    entity_id: switch.multi_relay_0_1
+#    state: 'off'
+#  - condition: or
+#    conditions:
+#    - condition: state
+#      entity_id: switch.multi_relay_0_2
+#      state: 'off'
+#  action:
+#    service: light.turn_on
+#    entity_id: light.night_lamp
+#    
+    
+    
+    
+    
