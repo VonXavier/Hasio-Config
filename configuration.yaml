@@ -1,0 +1,96 @@
+# Configure a default setup of Home Assistant (frontend, api, etc)
+default_config:
+
+# Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+# http:
+#   base_url: example.duckdns.org:8123
+
+# Text to speech
+tts:
+  - platform: google_translate
+
+homeassistant:
+  customize: !include customize.yaml
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+sensor: !include sensor.yaml
+
+alexa_media:
+  accounts:
+    - email: dguzicki@gmail.com
+      password: !secret amazon_password
+      url: amazon.com
+
+shopping_list:
+
+logger:
+  default: info
+  logs:
+    hacs: debug
+    
+resources:
+  - url: /www/community_plugin/calendar-card/calendar-card.js
+    type: js
+ 
+mqtt:
+  broker: 192.168.1.225
+  port: 1883
+  username: admin
+  password: !secret mqtt    
+
+hacs:
+  token: !secret hacs
+  appdaemon: true
+  python_script: true
+  theme: true 
+  
+recorder:
+  db_url: !secret maria
+
+######### notyfikacje #########
+notify:
+  platform: pushbullet
+  api_key: !secret notify
+  name: pushbullet
+
+discovery:
+  ignore:
+   - yeelight
+yeelight:
+  devices:
+   192.168.1.12:
+    name: night lamp
+    
+mysensors:
+  gateways:
+   - device: '/dev/ttyUSB0'
+
+sonoff:
+  username: dguzicki@gmail.com 
+  password: !secret sonoff
+  scan_interval: 60 #(optional)
+  grace_period: 600 #(optional)
+  api_region: 'eu' #polecam dodać
+  entity_prefix: True #usuwa prefix sonoff z nazw urządzeń
+  debug: False #(optional)
+
+
+#xiaomi_aqara:
+#  discovery_retry: 5
+#  gateways:
+#    - key: !secret xiaomi
+#      host: 192.168.1.6
+###tuya:
+####  username: dguzicki@gmail.com   # podaj swój login do chmury TUYA lub SMART LIFE w zależności co używasz
+####  password: !secret tuya  # podaj hasło do chmury
+####  country_code: 48 # kod naszego kraju, to ten sam co w telefonie czyli 48
+####  platform: smart_life # lub tuya w zależności do czego się logujesz
+###
+###
+###
+###
+##
+##
+#
+#
