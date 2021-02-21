@@ -1,11 +1,16 @@
-esphome:
+substitutions:
   name: swiatlo
+  upper_devicename: swiatlo
+#  update_interval: 60s
+
+esphome:
+  name: ${name}
   platform: ESP32
   board: esp32-poe-iso
 
 wifi:
-  ssid: "Internet"
-  password: "0909090909"
+  ssid: "Internet_Domowy_3503DC"
+  password: "MzUwM0RD"
   manual_ip:
     # Set this to the IP of the ESP
     static_ip: 192.168.1.66
@@ -17,7 +22,7 @@ wifi:
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Swiatlo Fallback Hotspot"
-    password: "090909"
+    password: "ygcyO06QNNgO"
 
 captive_portal:
 
@@ -26,10 +31,10 @@ logger:
 
 # Enable Home Assistant API
 api:
-  password: "0909090909"
+  password: "Policja667"
 
 ota:
-  password: "0909090909"
+  password: "Policja667"
 
 i2c:
   sda: 13
@@ -40,9 +45,6 @@ i2c:
 mcp23017:
   - id: 'mcp23017_hub'
     address: 0x27
-
-substitutions:
-  name: swiatlo
 
 switch:
   - platform: restart
@@ -57,3 +59,139 @@ switch:
       mode: OUTPUT
       inverted: False
     id: Lampa_1
+    
+  - platform: gpio
+    name: "Lampa 2"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 1
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_2
+    
+  - platform: gpio
+    name: "Lampa 3"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 2
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_3
+    
+  - platform: gpio
+    name: "Lampa 4"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 3
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_4
+    
+  - platform: gpio
+    name: "Lampa 5"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 4
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_5
+
+  - platform: gpio
+    name: "Lampa 6"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 5
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_6
+    
+  - platform: gpio
+    name: "Lampa 7"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 6
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_7
+
+  - platform: gpio
+    name: "Lampa 8"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 7
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_8
+    
+  - platform: gpio
+    name: "Lampa 9"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 8
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_9
+
+  - platform: gpio
+    name: "Lampa 10"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 9
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_10
+    
+  - platform: gpio
+    name: "Lampa 11"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 10
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_11
+
+  - platform: gpio
+    name: "Lampa 12"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 11
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_12
+    
+  - platform: gpio
+    name: "Lampa 13"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 12
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_13
+    
+  - platform: gpio
+    name: "Lampa 14"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 13
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_14
+    
+  - platform: gpio
+    name: "Lampa 15"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 14
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_15
+
+  - platform: gpio
+    name: "Lampa 16"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 15
+      mode: OUTPUT
+      inverted: False
+    id: Lampa_16
+    
