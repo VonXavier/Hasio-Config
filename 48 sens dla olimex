@@ -1,4 +1,153 @@
+esphome:
+  name: swiatlo
+  platform: ESP32
+  board: esp32-poe-iso
+
+wifi:
+  ssid: "Internet_Domowy_3503DC"
+  password: "090909090909"
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Swiatlo Fallback Hotspot"
+    password: "ygcyO06QNNgO"
+
+captive_portal:
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  password: "09090909090909"
+
+ota:
+  password: "090909090909"
+
+i2c:
+  sda: 21
+  scl: 22
+  scan: True
+  id: bus_a
+
+mcp23017:
+  - id: 'mcp23017_hub'
+    address: 0x20
+  - id: 'mcp23017_hub2'
+    address: 0x22
+  - id: 'mcp23017_hub3'
+    address: 0x21
+    
+binary_sensor:
   - platform: gpio
+    name: "Pin #0"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 0
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #1"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 1
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #2"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 2
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #3"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 3
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #4"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 4
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #5"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 5
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #6"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 6
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #7"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 7
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #8"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 8
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #9"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 9
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #10"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 10
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #11"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 11
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #12"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 12
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #13"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 13
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #14"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 14
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #15"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 15
+      mode: INPUT_PULLUP
+
+
+
+
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+- platform: gpio
     name: "Pin #0"
     pin:
       mcp23017: mcp23017_hub
