@@ -1,0 +1,288 @@
+  - platform: gpio
+    name: "Pin #0"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 0
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #1"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 1
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #2"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 2
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #3"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 3
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #4"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 4
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #5"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 5
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #6"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 6
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #7"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 7
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #8"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 8
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #9"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 9
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #10"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 10
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #11"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 11
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #12"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 12
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #13"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 13
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #14"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 14
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #15"
+    pin:
+      mcp23017: mcp23017_hub
+      number: 15
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #16"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 0
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #17"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 1
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #18"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 2
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #19"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 3
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #20"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 4
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #21"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 5
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #22"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 6
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #23"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 7
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #24"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 8
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #25"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 9
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #26"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 10
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #27"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 11
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #28"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 12
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #29"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 13
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #30"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 14
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #31"
+    pin:
+      mcp23017: mcp23017_hub2
+      number: 15
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #32"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 0
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #33"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 1
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #34"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 2
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #35"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 3
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #36"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 4
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #37"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 5
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #38"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 6
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #39"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 7
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #40"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 8
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #41"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 9
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #42"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 10
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #43"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 11
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #44"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 12
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #45"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 13
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #46"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 14
+      mode: INPUT_PULLUP
+  - platform: gpio
+    name: "Pin #47"
+    pin:
+      mcp23017: mcp23017_hub3
+      number: 15
+      mode: INPUT_PULLUP
