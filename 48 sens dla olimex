@@ -37,7 +37,9 @@ mcp23017:
     address: 0x22
   - id: 'mcp23017_hub3'
     address: 0x21
-    
+
+switch:
+lub
 binary_sensor:
   - platform: gpio
     name: "Pin #0"
