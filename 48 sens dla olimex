@@ -9,8 +9,8 @@ esphome:
   board: esp32-poe-iso
 
 wifi:
-  ssid: "Internet_Domowy_3503DC"
-  password: "MzUwM0RD"
+  ssid: "Internet"
+  password: "09"
   manual_ip:
     # Set this to the IP of the ESP
     static_ip: 192.168.1.66
@@ -22,7 +22,7 @@ wifi:
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
     ssid: "Swiatlo Fallback Hotspot"
-    password: "ygcyO06QNNgO"
+    password: "090909"
 
 captive_portal:
 
@@ -31,10 +31,10 @@ logger:
 
 # Enable Home Assistant API
 api:
-  password: "Policja667"
+  password: "090909"
 
 ota:
-  password: "Policja667"
+  password: "090909"
 
 i2c:
   sda: 13
@@ -45,6 +45,22 @@ i2c:
 mcp23017:
   - id: 'mcp23017_hub'
     address: 0x27
+
+binary_sensor:
+  - platform: gpio
+    pin: 
+      mcp23017: mcp23017_hub
+      number: 0
+      mode: OUTPUT
+      inverted: False
+    name: "Status d1"
+    device_class: light
+    on_press:
+      then:
+      - switch.turn_on: Lampa_2
+      - delay: 100ms
+      - switch.turn_off: Lampa_2
+
 
 switch:
   - platform: restart
